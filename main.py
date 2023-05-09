@@ -46,7 +46,7 @@ for game in odds_data:
 
 # Convert the game data to a numpy array and split it into features and labels
 game_data = np.array(game_data)
-X = game_data[:, 3:7].astype(float)
+X = game_data[:, 3:6].astype(float)
 y_win = np.where(game_data[:, 0] == game_data[:, 1], 2, np.where(game_data[:, 3] > game_data[:, 4], 1, 0))
 y_total = np.where(game_data[:, 3].astype(float) > 8.5, 1, 0) #may need to update to y_total = np.where(game_data[:, 5].astype(float) > 8.5, 1, 0) for furture odds vs historical
 
